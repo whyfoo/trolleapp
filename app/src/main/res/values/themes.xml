@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Trolleapp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#021520</item>
-        <item name="colorPrimaryVariant">#021520</item>
+        <item name="colorPrimary">#02131C</item>
+        <item name="colorPrimaryVariant">#02131C</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

@@ -1,11 +1,12 @@
-package com.trolle.trolleapp
+package com.trolle.trolleapp.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
+import com.trolle.trolleapp.ui.main.MainActivity
+import com.trolle.trolleapp.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

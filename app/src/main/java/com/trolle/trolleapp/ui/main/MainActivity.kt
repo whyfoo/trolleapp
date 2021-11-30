@@ -1,11 +1,11 @@
-package com.trolle.trolleapp
+package com.trolle.trolleapp.ui.main
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import com.trolle.trolleapp.R
 
 class MainActivity : AppCompatActivity() {
 
