@@ -16,4 +16,10 @@
     <string name="or_sign_in_using">or Sign In using</string>
     <string name="don_t_have_any_account_yet">Don’t have any account yet?</string>
     <string name="sign_up">Sign Up</string>
+    <string name="icon">Icon</string>
+    <string name="retype_password">Retype Password</string>
+    <string name="email">Email</string>
+    <string name="or_sign_up_using">or Sign Up using</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="connect_to_trolley">Connect to Trolley?</string>
 </resources>

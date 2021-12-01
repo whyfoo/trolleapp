@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trolleapp">
         <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
@@ -18,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.signin.SignInActivity"
+        <activity
+            android:name=".ui.signin.SignInActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ui.main.MainActivity" />
     </application>
