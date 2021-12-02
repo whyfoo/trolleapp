@@ -31,4 +31,9 @@
     <string name="name_dummy">John Doe</string>
     <string name="email_dummy">john.doe@gmail.com</string>
     <string name="see_shopping_history">See Shopping History</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="add_payment_method_s">Add Payment Method(s)</string>
+    <string name="about">About</string>
+    <string name="help">Help</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
