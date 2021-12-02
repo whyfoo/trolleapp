@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@color/bgc"
-    tools:context=".ui.home.HomeSuccessActivity">
+    tools:context=".ui.profile.ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,14 +16,21 @@
         android:orientation="vertical"
         android:background="@color/bgc">
 
+        <ImageView
+            android:id="@+id/image_view_profile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/profile"
+            />
+
         <TextView
-            android:id="@+id/text_view_title"
+            android:id="@+id/text_view_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/connection_success"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:textColor="@color/pink"
+            android:text="@string/name_dummy"
+            android:textSize="24sp"
+            android:textColor="@color/purple"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -31,22 +38,28 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <ImageView
-            android:id="@+id/image_view_checklist"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/checklist"
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_dummy"
+            android:textSize="20sp"
+            android:textColor="@color/purple"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             />
 
         <TextView
-            android:id="@+id/text_view_success"
+            android:id="@+id/text_view_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/happy_shopping"
-            android:textSize="20sp"
-            android:textColor="@color/pink"
-            android:layout_marginBottom="20dp"
+            android:text="@string/see_shopping_history"
+            android:textSize="30sp"
+            android:textColor="@color/purple"
+            android:paddingTop="200dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
