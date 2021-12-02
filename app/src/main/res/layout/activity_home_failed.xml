@@ -62,7 +62,7 @@
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rounded_bottom_bar"
-        app:menu="@drawable/bottom_bar"
+        app:menu="@menu/bottom_bar"
         />
 
 </RelativeLayout>

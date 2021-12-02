@@ -28,7 +28,7 @@
     <string name="click_here_to_retry">Click <u>Here</u> to Retry</string>
     <string name="sign_up_underline"><u>Sign Up</u></string>
     <string name="sign_in_underline"><u>Sign In</u>u></string>
-    <string name="name_dummy">John Doe</string>
+    <string name="username_dummy">johndoe</string>
     <string name="email_dummy">john.doe@gmail.com</string>
     <string name="see_shopping_history">See Shopping History</string>
     <string name="edit_profile">Edit Profile</string>
@@ -36,4 +36,7 @@
     <string name="about">About</string>
     <string name="help">Help</string>
     <string name="sign_out">Sign Out</string>
+    <string name="new_password">New Password</string>
+    <string name="save">Save</string>
+    <string name="profile_picture">Profile Picture</string>
 </resources>
