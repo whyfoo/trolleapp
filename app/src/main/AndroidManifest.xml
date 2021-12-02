@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trolleapp">
         <activity
+            android:name=".ui.home.HomeSuccessActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
