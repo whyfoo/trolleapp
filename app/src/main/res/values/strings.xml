@@ -24,4 +24,8 @@
     <string name="connect_to_trolley">Connect to Trolley?</string>
     <string name="connection_success">Connection Success</string>
     <string name="happy_shopping">Happy Shopping</string>
+    <string name="connection_failed">Connection Failed</string>
+    <string name="click_here_to_retry">Click <u>Here</u> to Retry</string>
+    <string name="sign_up_underline"><u>Sign Up</u></string>
+    <string name="sign_in_underline"><u>Sign In</u>u></string>
 </resources>
