@@ -4,28 +4,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.TextView
 import android.widget.Toast
 import com.trolle.trolleapp.R
+import com.trolle.trolleapp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
 
-    private var backPressed: Boolean = false
+    private lateinit var binding: ActivitySignUpBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
-    }
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onBackPressed() {
-        if (backPressed) {
-            super.onBackPressed()
-            return
+        binding.textViewThenSignIn.setOnClickListener{
+            finish()
         }
-        this.backPressed = true
-        Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show()
-        Handler(Looper.getMainLooper()).postDelayed({
-            this.backPressed = false
-        }, 2000)
     }
 
 }

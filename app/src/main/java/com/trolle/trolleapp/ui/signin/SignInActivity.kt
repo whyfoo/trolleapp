@@ -9,26 +9,27 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.trolle.trolleapp.R
+import com.trolle.trolleapp.databinding.ActivitySignInBinding
 import com.trolle.trolleapp.ui.home.HomeActivity
 import com.trolle.trolleapp.ui.main.MainActivity
 import com.trolle.trolleapp.ui.signup.SignUpActivity
 
 class SignInActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySignInBinding
     private var backPressed: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val signinButton = findViewById<Button>(R.id.button_sign_in)
-        signinButton.setOnClickListener {
+        binding.buttonSignIn.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
 
-        val signupButton = findViewById<TextView>(R.id.text_view_then_sign_up)
-        signupButton.setOnClickListener {
+        binding.textViewThenSignUp.setOnClickListener{
             startActivity(Intent(this, SignUpActivity::class.java))
         }
     }

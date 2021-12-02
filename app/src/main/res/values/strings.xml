@@ -27,7 +27,7 @@
     <string name="connection_failed">Connection Failed</string>
     <string name="click_here_to_retry">Click <u>Here</u> to Retry</string>
     <string name="sign_up_underline"><u>Sign Up</u></string>
-    <string name="sign_in_underline"><u>Sign In</u>u></string>
+    <string name="sign_in_underline"><u>Sign In</u></string>
     <string name="username_dummy">johndoe</string>
     <string name="email_dummy">john.doe@gmail.com</string>
     <string name="see_shopping_history">See Shopping History</string>
