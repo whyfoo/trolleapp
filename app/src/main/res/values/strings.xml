@@ -40,10 +40,12 @@
     <string name="save">Save</string>
     <string name="profile_picture">Profile Picture</string>
     <string name="about_text">
-        \t\t\t\t\tThis application aims to connect buyers with trolley that are already equipped with the Troll-E system. Later, the buyers will be connected to their digital wallet account and can pay for their purchases through this application. In addition, the history of previous purchases can also be accessed in the profile section.<br/>
-        \t\t\t\t\tTroll-E itself is a system that aims to create an easy and automated shopping system. Thus, the convenience of shoppers in shopping can be increased, because they do not have to queue anymore when they want to complete the development process.<br/>
+        \t\t\t\t\tThis application aims to connect buyers with trolley that are already equipped with the Troll-E system. Later, the buyers will be connected to their digital wallet account and can pay for their purchases through this application. In addition, the history of previous purchases can also be accessed in the profile section.<br />
+        \t\t\t\t\tTroll-E itself is a system that aims to create an easy and automated shopping system. Thus, the convenience of shoppers in shopping can be increased, because they do not have to queue anymore when they want to complete the development process.<br />
         \t\t\t\t\tThis system and application was created by a team that consist of 5 members as follow.
     </string>
     <string name="website">Website</string>
     <string name="youtube">YouTube</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
