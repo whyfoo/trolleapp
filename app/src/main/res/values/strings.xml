@@ -21,7 +21,7 @@
     <string name="email">Email</string>
     <string name="or_sign_up_using">or Sign Up using</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="connect_to_trolley">Connect to Trolley?</string>
+    <string name="connect_to_trolley">Ready to shop? \n\nTo get started, scan the QR Code found on the trolley or manually input the Trolley ID using the button below</string>
     <string name="connection_success">Connection Success</string>
     <string name="happy_shopping">Happy Shopping</string>
     <string name="connection_failed">Connection Failed</string>
