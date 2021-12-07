@@ -47,6 +47,7 @@
             app:icon="@drawable/ic_baseline_qr_code_scanner_24"
             android:backgroundTint="@color/white"
             app:cornerRadius="15dp"
+            android:padding="12dp"
             />
 
         <TextView
@@ -67,6 +68,7 @@
             app:icon="@drawable/ic_baseline_edit_24"
             android:backgroundTint="@color/white"
             app:cornerRadius="15dp"
+            android:padding="12dp"
             />
 
     </LinearLayout>
