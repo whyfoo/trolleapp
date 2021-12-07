@@ -49,4 +49,30 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="trolley_empty">Your trolley is empty. \nStart shopping to see your item(s)</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="checkout">Checkout</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="ovo">OVO</string>
+    <string name="linkaja">LinkAja</string>
+    <string name="shopeepay">ShopeePay</string>
+    <string name="dana">Dana</string>
+    <string name="payment_summary">Payment Summary</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="sub_total_price_dummy">Rp 103.000,-</string>
+    <string name="admin_fee">Admin Fee</string>
+    <string name="admin_fee_price_dummy">Rp 6.500,-</string>
+    <string name="grand_total">GRAND TOTAL</string>
+    <string name="grand_total_price_dummy">Rp 109.500,-</string>
+    <string name="payment_successful">Payment Successful!</string>
+    <string name="invoice_number_dummy">7192381924</string>
+    <string name="invoice">Invoice #</string>
+    <string name="location_dummy">Hypermart Depok-ToS</string>
+    <string name="time_dummy">14:32</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="payment_failed">Payment Failed :(</string>
+    <string name="checkout_failed_message">
+        It looks like that the payment method chosen is having an error.<br /><br /><br />
+        Please kindly try again.
+    </string>
+    <string name="try_again">Try Again</string>
 </resources>
