@@ -11,9 +11,9 @@
         android:title="@string/edit_profile" />
 
     <item
-        android:id="@+id/item_add_payment_method"
-        android:icon="@drawable/add"
-        android:title="@string/add_payment_method_s" />
+        android:id="@+id/item_see_shopping_history"
+        android:icon="@drawable/history"
+        android:title="@string/see_shopping_history" />
 
     <item
         android:id="@+id/item_about"
