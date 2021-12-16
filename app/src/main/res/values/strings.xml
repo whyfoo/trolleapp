@@ -94,7 +94,5 @@
     </string>
     <string name="shopping_list">Shopping List</string>
     <string name="pay">Pay</string>
-    <string name="checkout">Checkout</string>
     <string name="end_of_the_list">- end of the list -</string>
-    <string name="profile_picture">Profile Picture</string>
 </resources>
