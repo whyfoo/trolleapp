@@ -1,5 +1,6 @@
 package com.trolle.trolleapp.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -15,6 +16,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.trolle.trolleapp.R
 import com.trolle.trolleapp.databinding.ActivityHomeBinding
+import com.trolle.trolleapp.ui.side_menu.AboutActivity
+import com.trolle.trolleapp.ui.side_menu.EditProfileActivity
+import com.trolle.trolleapp.ui.side_menu.HelpActivity
+import com.trolle.trolleapp.ui.signin.SignInActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -32,6 +37,21 @@ class HomeActivity : AppCompatActivity() {
 
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
+            when(menuItem.itemId){
+                R.id.item_edit_profile ->
+                    startActivity(Intent(this, EditProfileActivity::class.java))
+                R.id.item_see_shopping_history ->
+                    Toast.makeText(this, "shopping history", Toast.LENGTH_SHORT).show()
+                R.id.item_about ->
+                    startActivity(Intent(this, AboutActivity::class.java))
+                R.id.item_help ->
+                    startActivity(Intent(this, HelpActivity::class.java))
+                R.id.item_sign_out -> {
+                    startActivity(Intent(this, SignInActivity::class.java))
+                    finish()
+                }
+
+            }
             menuItem.isChecked = true
             binding.drawerLayout.close()
             true
@@ -42,6 +62,8 @@ class HomeActivity : AppCompatActivity() {
         val navController: NavController = navHostFragment.navController
 
         binding.bottomNavigation.setupWithNavController(navController)
+
+
     }
 
     override fun onBackPressed() {

@@ -81,16 +81,19 @@
     <string name="member_4">Member 4 : M. As\'ad Muyassir</string>
     <string name="member_5">Member 5 : Jonathan Elloy S.</string>
     <string name="help_text">
-        <li>First, the buyer must connect the application with the cart used through the Home page of the application. This can be done in 2 ways as follows.</li>
-        \t\t\t\t\t\u25BA By scanning the barcode on the cart.<br />
-        \t\t\t\t\t\u25BA By entering the trolley ID manually.<br /><br />
-        <li>Then, buyers will be directed to the Pay page which will later contain a Shopping List.</li><br />
-        <li>Next, the buyer must point the barcode at the product he wants to buy on the camera provided on the cart, so the system can scan it.</li><br />
-        <li>The scanned product will appear on the Shopping List. Repeat step 4 until the buyer has finished shopping.</li><br />
-        <li>After that, press the Check Out button at the bottom of the Shopping List to see the total price to be paid.</li><br />
-        <li>Buyers will be directed to the Checkout page. Determine the payment method you want to use and make sure that the total price paid is appropriate and the balance in the digital wallet is sufficient.</li><br />
-        <li>Press the Pay button to pay for all purchased products. Wait until there is a notification stating that the payment has been successfully made.</li><br />
-        <li>The shopping process has been completed and the cart connected to the app will be offline after a certain amount of time.</li>
+        <ul>
+            <li>First, the buyer must connect the application with the cart used through the Home page of the application. This can be done in 2 ways as follows.</li>
+            \t\t\t\t\t\u25BA By scanning the barcode on the cart.<br />
+            \t\t\t\t\t\u25BA By entering the trolley ID manually.<br /><br />
+            <li>Then, buyers will be directed to the Pay page which will later contain a Shopping List.</li><br />
+            <li>Next, the buyer must point the barcode at the product he wants to buy on the camera provided on the cart, so the system can scan it.</li><br />
+            <li>The scanned product will appear on the Shopping List. Repeat step 4 until the buyer has finished shopping.</li><br />
+            <li>After that, press the Check Out button at the bottom of the Shopping List to see the total price to be paid.</li><br />
+            <li>Buyers will be directed to the Checkout page. Determine the payment method you want to use and make sure that the total price paid is appropriate and the balance in the digital wallet is sufficient.</li><br />
+            <li>Press the Pay button to pay for all purchased products. Wait until there is a notification stating that the payment has been successfully made.</li><br />
+            <li>The shopping process has been completed and the cart connected to the app will be offline after a certain amount of time.</li>
+        </ul>
+
     </string>
     <string name="shopping_list">Shopping List</string>
     <string name="pay">Pay</string>
