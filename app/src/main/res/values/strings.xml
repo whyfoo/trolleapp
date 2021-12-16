@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">trolleapp</string>
+    <string name="app_name">Troll-E</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -95,4 +95,6 @@
     <string name="shopping_list">Shopping List</string>
     <string name="pay">Pay</string>
     <string name="end_of_the_list">- end of the list -</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_up_with_google">Sign up with Google</string>
 </resources>
