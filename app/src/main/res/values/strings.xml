@@ -75,4 +75,9 @@
         Please kindly try again.
     </string>
     <string name="try_again">Try Again</string>
+    <string name="member_1">Member 1 : Ivan Widjanarko</string>
+    <string name="member_2">Member 2 : Haidar Hanif</string>
+    <string name="member_3">Member 3 : Syarif Hidayat</string>
+    <string name="member_4">Member 4 : M. As\'ad Muyassir</string>
+    <string name="member_5">Member 5 : Jonathan Elloy S.</string>
 </resources>
