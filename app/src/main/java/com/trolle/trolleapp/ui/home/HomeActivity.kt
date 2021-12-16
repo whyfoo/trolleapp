@@ -26,11 +26,15 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.apply {
-            setDisplayShowHomeEnabled(true)
-            setHomeButtonEnabled(true)
-            setDisplayUseLogoEnabled(true)
-            setLogo(R.drawable.menglogo)
+        binding.topAppBar.setNavigationOnClickListener{
+            binding.drawerLayout.open()
+        }
+
+        binding.navigationView.setNavigationItemSelectedListener { menuItem ->
+            // Handle menu item selected
+            menuItem.isChecked = true
+            binding.drawerLayout.close()
+            true
         }
 
         val navHostFragment =
@@ -38,11 +42,6 @@ class HomeActivity : AppCompatActivity() {
         val navController: NavController = navHostFragment.navController
 
         binding.bottomNavigation.setupWithNavController(navController)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.navigation_drawer, menu)
-        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onBackPressed() {
