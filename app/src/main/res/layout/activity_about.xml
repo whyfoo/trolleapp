@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@color/bgc"
-    tools:context=".ui.home.HomeActivity">
+    tools:context=".ui.side_menu.AboutActivityy">
 
     <LinearLayout
         android:layout_width="match_parent"
