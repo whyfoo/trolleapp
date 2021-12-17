@@ -1,70 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:background="@color/bgc"
-    tools:context=".ui.home.HomeSuccessActivity">
+    tools:context=".ui.pay.CheckoutActivity">
+
+    <ImageView
+        android:id="@+id/image_view_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="50dp"
+        android:src="@drawable/icon"
+        android:contentDescription="@string/icon" />
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/payment_successful"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/lato_family"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/bgc">
-
-        <TextView
-            android:id="@+id/text_view_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/connection_success"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:textColor="@color/pink"
-            android:fontFamily="@font/lato_family"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/image_view_checklist"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/checklist"
-            android:contentDescription="@string/success" />
+            android:id="@+id/image_view_payment_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ovo"
+            android:contentDescription="@string/icon" />
 
         <TextView
-            android:id="@+id/text_view_success"
+            android:id="@+id/text_view_grand_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/happy_shopping"
-            android:textSize="20sp"
-            android:textColor="@color/pink"
+            android:layout_marginStart="25dp"
+            android:text="@string/grand_total_price_dummy"
+            android:textColor="@color/white"
             android:fontFamily="@font/nunito_family"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_bar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/rounded_bottom_bar"
-        app:menu="@menu/bottom_bar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/text_view_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_view_invoice_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invoice_number_dummy"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/text_view_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location_dummy"
+            android:textColor="@color/white"
+            android:layout_margin="15dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_view_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_dummy"
+            android:textColor="@color/white"
+            android:layout_margin="15dp"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_back_to_home"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/back_to_home"
+        android:textStyle="bold"
+        android:fontFamily="@font/nunito_family"
+        android:backgroundTint="@color/pink"
+        android:textColor="@color/bgc"
+        app:cornerRadius="15dp"
         />
 
-</RelativeLayout>
+</LinearLayout>

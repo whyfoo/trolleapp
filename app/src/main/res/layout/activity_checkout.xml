@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="15dp"
-    android:background="@color/bgc"
-    tools:context=".ui.pay.CheckoutActivity">
+    tools:context=".ui.pay.CheckoutActivity"
+    android:padding="14dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="75dp">
+            android:layout_marginBottom="75dp"
+            android:layout_marginTop="14dp">
 
             <RadioButton
                 android:id="@+id/radio_button_ovo"
@@ -201,7 +202,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="14dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -237,20 +239,18 @@
 
             </LinearLayout>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_pay"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_width="124dp"
+                android:layout_height="55dp"
                 android:text="@string/pay"
-                android:textColor="@color/bgc"
                 android:textStyle="bold"
                 android:fontFamily="@font/nunito_family"
-                android:layout_margin="15dp"
-                android:background="@drawable/rounded_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:backgroundTint="@color/pink"
+                android:textColor="@color/bgc"
+                app:cornerRadius="15dp"
+                android:padding="12dp"
+                android:layout_marginLeft="48dp"
                 />
 
         </LinearLayout>

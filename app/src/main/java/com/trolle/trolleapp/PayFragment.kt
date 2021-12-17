@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.trolle.trolleapp.data.Item
 import com.trolle.trolleapp.data.adapter.ListItemAdapter
 import com.trolle.trolleapp.databinding.FragmentPayBinding
+import com.trolle.trolleapp.ui.pay.CheckoutActivity
+import com.trolle.trolleapp.ui.side_menu.EditProfileActivity
 import com.trolle.trolleapp.ui.signin.SignInActivity
 import java.util.*
 
@@ -46,11 +48,17 @@ class PayFragment : Fragment() {
             showLoading(true)
             Handler(Looper.getMainLooper()).postDelayed({
                 showLoading(false)
-            }, 1000)
-        }, 1000)
+            }, 2000)
+        }, 2000)
 
         list.addAll(listItems)
         showRecyclerList()
+
+        binding.buttonCheckout.setOnClickListener {
+            requireActivity().run{
+                startActivity(Intent(context, CheckoutActivity::class.java))
+            }
+        }
     }
 
     private val listItems: ArrayList<Item>

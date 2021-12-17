@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PayFragment"
-    android:paddingTop="60dp">
+    android:paddingTop="64dp">
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -45,8 +45,7 @@
         android:id="@+id/rv_items"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:paddingVertical="24dp"
-        android:layout_marginVertical="24dp"
+        android:layout_marginVertical="12dp"
         android:visibility="invisible"
         android:layout_below="@id/tv_shopping_cart"
 
@@ -95,10 +94,10 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/image_view_barcode"
+            android:id="@+id/button_checkout"
             android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="@string/save"
+            android:layout_height="55dp"
+            android:text="@string/checkout"
             android:textStyle="bold"
             android:fontFamily="@font/nunito_family"
             android:backgroundTint="@color/pink"
