@@ -12,42 +12,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/bgc"
         android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/bgc">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/image_view_profile"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"
-            android:src="@drawable/profile"
-            android:contentDescription="@string/profile_picture" />
+            android:contentDescription="@string/profile_picture"
+            android:src="@drawable/profile" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_field_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_username"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:inputType="text"
-                android:hint="@string/username"
-                android:textColorHint="@color/grey"
+                android:autofillHints="Name"
                 android:background="@drawable/rounded_edittext"
+                android:hint="@string/username"
+                android:inputType="text"
                 android:paddingStart="10dp"
+                android:textColorHint="@color/grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:autofillHints="Name"
-                tools:ignore="RtlSymmetry"
-                />
+                tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,25 +54,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:inputType="textEmailAddress"
-                android:hint="@string/email"
-                android:textColorHint="@color/grey"
+                android:autofillHints="Email"
                 android:background="@drawable/rounded_edittext"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
+                android:textColorHint="@color/grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:autofillHints="Email"
-                tools:ignore="RtlSymmetry"
-                />
+                tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,25 +79,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:inputType="textPassword"
-                android:hint="@string/password"
-                android:textColorHint="@color/grey"
+                android:autofillHints="Password"
                 android:background="@drawable/rounded_edittext"
+                android:hint="@string/password"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
+                android:textColorHint="@color/grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:autofillHints="Password"
-                tools:ignore="RtlSymmetry"
-                />
+                tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,25 +104,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_new_password"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:inputType="textPassword"
-                android:hint="@string/new_password"
-                android:textColorHint="@color/grey"
+                android:autofillHints="New Password"
                 android:background="@drawable/rounded_edittext"
+                android:hint="@string/new_password"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
+                android:textColorHint="@color/grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:autofillHints="New Password"
-                tools:ignore="RtlSymmetry"
-                />
+                tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,25 +129,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_retype_password"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:inputType="textPassword"
-                android:hint="@string/retype_password"
-                android:textColorHint="@color/grey"
+                android:autofillHints="Retype Password"
                 android:background="@drawable/rounded_edittext"
+                android:hint="@string/retype_password"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
+                android:textColorHint="@color/grey"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:autofillHints="Retype Password"
-                tools:ignore="RtlSymmetry"
-                />
+                tools:ignore="RtlSymmetry" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -163,15 +153,16 @@
             android:id="@+id/button_save"
             android:layout_width="300dp"
             android:layout_height="35dp"
-            android:text="@string/save"
-            android:textColor="@color/bgc"
             android:layout_marginTop="25dp"
             android:background="@drawable/rounded_button"
+            android:text="@string/save"
+            android:textStyle="bold"
+            android:textColor="@color/bgc"
+            android:fontFamily="@font/nunito_family"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 

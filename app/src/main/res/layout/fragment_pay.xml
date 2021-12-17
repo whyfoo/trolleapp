@@ -10,9 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:textColor="@color/yellow"
+        android:text="@string/trolley_empty"
         android:textSize="18sp"
-        android:padding="20dp"
-        android:text="@string/trolley_empty" />
+        android:textColor="@color/yellow"
+        android:fontFamily="@font/nunito_family"
+        android:padding="20dp" />
 
 </FrameLayout>

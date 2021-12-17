@@ -4,19 +4,19 @@
         android:id="@+id/homeFragment"
         android:enabled="true"
         android:icon="@drawable/home"
-        android:title="Home"
+        android:title="@string/home"
         />
 
     <item
         android:id="@+id/payFragment"
         android:enabled="true"
         android:icon="@drawable/wallet"
-        android:title="Pay"
+        android:title="@string/pay"
         />
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/user"
-        android:title="Profile"
+        android:title="@string/profile"
         />
 </menu>

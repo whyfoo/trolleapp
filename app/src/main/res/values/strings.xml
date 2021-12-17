@@ -104,4 +104,14 @@
     <string name="linkedin_link_syarif">https://www.linkedin.com/in/skudou/</string>
     <string name="linkedin_link_aad">https://www.linkedin.com/in/m-asad-m/</string>
     <string name="linkedin_link_elloy">https://www.linkedin.com/in/jonathan-elloy-692433197/</string>
+    <string name="welcome_to_troll_e">Welcome to Troll-E!</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="or">OR</string>
+    <string name="manually_input_the_id">Manually input the ID</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+    <string name="home">Home</string>
+    <string name="pay">Pay</string>
+    <string name="profile">Profile</string>
 </resources>

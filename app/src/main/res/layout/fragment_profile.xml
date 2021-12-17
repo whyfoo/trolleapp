@@ -16,37 +16,30 @@
             android:id="@+id/image_view_profile"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/profile"
+            android:contentDescription="@string/profile_picture" />
 
         <TextView
             android:id="@+id/text_view_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/purple"
-            android:textAlignment="center"
             android:text="@string/username_dummy"
             android:textSize="24sp"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:fontFamily="@font/lato_family"
             android:layout_marginTop="30dp"/>
 
         <TextView
             android:id="@+id/text_view_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/grey"
-            android:textAlignment="center"
             android:text="@string/email_dummy"
             android:textSize="20sp"
-            android:layout_marginTop="5dp"/>
-
-        <TextView
-            android:id="@+id/text_view_history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple"
             android:textAlignment="center"
-            android:text="@string/see_shopping_history"
-            android:textSize="24sp"
-            android:layout_marginTop="150dp"/>
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_family"
+            android:layout_marginTop="5dp"/>
 
     </LinearLayout>
 
