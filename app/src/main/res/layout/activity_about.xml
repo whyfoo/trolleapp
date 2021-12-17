@@ -79,7 +79,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/ivan"
-                                android:contentDescription="@string/member_1" />
+                                android:tag="@string/linkedin_link_ivan"
+                                android:onClick="openBrowser"
+                                android:contentDescription="@string/member_1"
+                                tools:ignore="UsingOnClickInXml" />
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -96,7 +99,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/hanif"
-                                android:contentDescription="@string/member_2" />
+                                android:tag="@string/linkedin_link_hanif"
+                                android:onClick="openBrowser"
+                                android:contentDescription="@string/member_2"
+                                tools:ignore="UsingOnClickInXml" />
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -114,7 +120,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/syarif"
-                                android:contentDescription="@string/member_3" />
+                                android:tag="@string/linkedin_link_syarif"
+                                android:onClick="openBrowser"
+                                android:contentDescription="@string/member_3"
+                                tools:ignore="UsingOnClickInXml" />
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -131,7 +140,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/aad"
-                                android:contentDescription="@string/member_4" />
+                                android:tag="@string/linkedin_link_aad"
+                                android:onClick="openBrowser"
+                                android:contentDescription="@string/member_4"
+                                tools:ignore="UsingOnClickInXml" />
                         </RelativeLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -148,7 +160,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/elloy"
-                                android:contentDescription="@string/member_5" />
+                                android:tag="@string/linkedin_link_elloy"
+                                android:onClick="openBrowser"
+                                android:contentDescription="@string/member_5"
+                                tools:ignore="UsingOnClickInXml" />
                         </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -168,7 +183,10 @@
                 android:layout_height="50dp"
                 android:layout_margin="25dp"
                 android:src="@drawable/youtube"
-                android:contentDescription="@string/website" />
+                android:tag="@string/youtube_link"
+                android:onClick="openBrowser"
+                android:contentDescription="@string/youtube"
+                tools:ignore="UsingOnClickInXml" />
 
             <ImageView
                 android:id="@+id/image_view_website"
@@ -176,7 +194,10 @@
                 android:layout_height="50dp"
                 android:layout_margin="25dp"
                 android:src="@drawable/website"
-                android:contentDescription="@string/youtube" />
+                android:tag="@string/website_link"
+                android:onClick="openBrowser"
+                android:contentDescription="@string/website"
+                tools:ignore="UsingOnClickInXml" />
 
         </LinearLayout>
 

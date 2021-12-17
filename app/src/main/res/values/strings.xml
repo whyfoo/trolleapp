@@ -97,4 +97,11 @@
     <string name="end_of_the_list">- end of the list -</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="youtube_link">https://bit.ly/troll-e_video</string>
+    <string name="website_link">https://competent-wing-9bbbd5.netlify.app/</string>
+    <string name="linkedin_link_ivan">https://www.linkedin.com/in/ivanwidjanarko/</string>
+    <string name="linkedin_link_hanif">https://www.linkedin.com/in/haidarhnf/</string>
+    <string name="linkedin_link_syarif">https://www.linkedin.com/in/skudou/</string>
+    <string name="linkedin_link_aad">https://www.linkedin.com/in/m-asad-m/</string>
+    <string name="linkedin_link_elloy">https://www.linkedin.com/in/jonathan-elloy-692433197/</string>
 </resources>
