@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:textColor="@color/white"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Item Name"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/tv_item_count"
+        android:textColor="@color/white"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="end"
+        tools:text="x1" />
+
+    <TextView
+        android:id="@+id/tv_item_price"
+        android:textColor="@color/white"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:text="Rp 10.000,-"
+        />
+
+</LinearLayout>

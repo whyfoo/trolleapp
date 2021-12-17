@@ -16,17 +16,14 @@
             android:name=".ui.pay.ShoppingListActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".ui.side_menu.HelpActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:name=".ui.side_menu.HelpActivity" />
         <activity
             android:name=".ui.pay.CheckoutActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".ui.side_menu.AboutActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:name=".ui.side_menu.AboutActivity" />
         <activity
-            android:name=".ui.side_menu.EditProfileActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:name=".ui.side_menu.EditProfileActivity" />
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

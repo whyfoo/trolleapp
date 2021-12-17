@@ -112,6 +112,42 @@
     <string name="success">Success</string>
     <string name="failed">Failed</string>
     <string name="home">Home</string>
-    <string name="pay">Pay</string>
     <string name="profile">Profile</string>
+
+    <string-array name="data_name">
+        <item>Indomie Jumbo</item>
+        <item>Energen Coklat</item>
+        <item>Simba Choco Chips</item>
+        <item>Mylanta</item>
+        <item>Bon Cabe</item>
+        <item>ABC Saus Extra Pedas</item>
+        <item>DeliSaos</item>
+        <item>Pepsodent Pasta Gigi</item>
+        <item>Cotton Bud</item>
+    </string-array>
+
+    <integer-array name="data_count">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+    </integer-array>
+
+    <integer-array name="data_price">
+        <item>20000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>15000</item>
+        <item>10000</item>
+        <item>5000</item>
+        <item>20000</item>
+    </integer-array>
+
 </resources>

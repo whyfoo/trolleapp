@@ -1,59 +1,86 @@
 package com.trolle.trolleapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.trolle.trolleapp.data.Item
+import com.trolle.trolleapp.data.adapter.ListItemAdapter
+import com.trolle.trolleapp.databinding.FragmentPayBinding
+import com.trolle.trolleapp.ui.signin.SignInActivity
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PayFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PayFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var rvItems: RecyclerView
+    private val list = ArrayList<Item>()
+    private var _binding: FragmentPayBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pay, container, false)
+        _binding = FragmentPayBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PayFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PayFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        rvItems = binding.rvItems
+        rvItems.setHasFixedSize(true)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            showLoading(true)
+            Handler(Looper.getMainLooper()).postDelayed({
+                showLoading(false)
+            }, 1000)
+        }, 1000)
+
+        list.addAll(listItems)
+        showRecyclerList()
     }
+
+    private val listItems: ArrayList<Item>
+        get() {
+            val dataName = resources.getStringArray(R.array.data_name)
+            val dataCount = resources.getIntArray(R.array.data_count)
+            val dataPrice = resources.getIntArray(R.array.data_price)
+            val listItem = ArrayList<Item>()
+
+            for (i in 1 until (dataName.size-1)) {
+                val item = Item(dataName.get(i),dataCount.get(i), dataPrice.get(i))
+                listItem.add(item)
+            }
+            return listItem
+        }
+
+    private fun showRecyclerList() {
+        rvItems.layoutManager = LinearLayoutManager(context)
+        val listItemAdapter = ListItemAdapter(list)
+        rvItems.adapter = listItemAdapter
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+            binding.tvItemEmpty.visibility = View.GONE
+        } else {
+            binding.progressBar.visibility = View.GONE
+            binding.rvItems.visibility = View.VISIBLE
+        }
+    }
+
 }
