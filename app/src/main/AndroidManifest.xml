@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.trolle.trolleapp">
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +14,13 @@
         android:theme="@style/Theme.Trolleapp">
         <activity
             android:name=".ui.pay.ShoppingListActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ui.side_menu.HelpActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ui.pay.CheckoutActivity"
-            android:exported="true" />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ui.side_menu.AboutActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
