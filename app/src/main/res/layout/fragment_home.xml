@@ -66,17 +66,17 @@
             />
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:id="@+id/image_view_input"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/nunito_family"
+            android:padding="12dp"
             android:text="@string/manually_input_the_id"
             android:textStyle="bold"
-            android:fontFamily="@font/nunito_family"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            app:icon="@drawable/ic_baseline_edit_24"
-            android:backgroundTint="@color/white"
             app:cornerRadius="15dp"
-            android:padding="12dp"
-            />
+            app:icon="@drawable/ic_baseline_edit_24" />
 
     </LinearLayout>
 
