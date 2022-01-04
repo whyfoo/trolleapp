@@ -8,10 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.trolle.trolleapp.data.Item
+import com.trolle.trolleapp.data.adapter.ItemAdapter
 import com.trolle.trolleapp.data.adapter.ListItemAdapter
+import com.trolle.trolleapp.data.viewmodel.MainViewModel
 import com.trolle.trolleapp.databinding.FragmentPayBinding
 import com.trolle.trolleapp.ui.pay.CheckoutActivity
 import com.trolle.trolleapp.ui.side_menu.EditProfileActivity
@@ -19,6 +24,9 @@ import com.trolle.trolleapp.ui.signin.SignInActivity
 import java.util.*
 
 class PayFragment : Fragment() {
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var adapter: ItemAdapter
 
     private lateinit var rvItems: RecyclerView
     private val list = ArrayList<Item>()
@@ -41,18 +49,24 @@ class PayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rvItems = binding.rvItems
-        rvItems.setHasFixedSize(true)
+        adapter = ItemAdapter()
+        adapter.notifyDataSetChanged()
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            showLoading(true)
-            Handler(Looper.getMainLooper()).postDelayed({
+        binding.rvItems.layoutManager = LinearLayoutManager(context)
+        binding.rvItems.setHasFixedSize(true)
+        binding.rvItems.adapter = adapter
+
+        searchItem()
+        Toast.makeText(context, "Searching items", Toast.LENGTH_SHORT).show()
+
+        viewModel.getSearchItems().observe(viewLifecycleOwner, {
+            if (it!=null){
+                showLoading(true)
+                adapter.setList(it)
                 showLoading(false)
-            }, 2000)
-        }, 2000)
-
-        list.addAll(listItems)
-        showRecyclerList()
+            }
+        })
 
         binding.buttonCheckout.setOnClickListener {
             requireActivity().run{
@@ -61,24 +75,10 @@ class PayFragment : Fragment() {
         }
     }
 
-    private val listItems: ArrayList<Item>
-        get() {
-            val dataName = resources.getStringArray(R.array.data_name)
-            val dataCount = resources.getIntArray(R.array.data_count)
-            val dataPrice = resources.getIntArray(R.array.data_price)
-            val listItem = ArrayList<Item>()
+    private fun searchItem(){
+        val query = "wondrouss"
+        viewModel.setSearchItems(query)
 
-            for (i in 1 until (dataName.size-1)) {
-                val item = Item(dataName.get(i),dataCount.get(i), dataPrice.get(i))
-                listItem.add(item)
-            }
-            return listItem
-        }
-
-    private fun showRecyclerList() {
-        rvItems.layoutManager = LinearLayoutManager(context)
-        val listItemAdapter = ListItemAdapter(list)
-        rvItems.adapter = listItemAdapter
     }
 
     private fun showLoading(state: Boolean) {
@@ -88,6 +88,7 @@ class PayFragment : Fragment() {
         } else {
             binding.progressBar.visibility = View.GONE
             binding.rvItems.visibility = View.VISIBLE
+            binding.layoutSubtotal.visibility = View.VISIBLE
         }
     }
 
