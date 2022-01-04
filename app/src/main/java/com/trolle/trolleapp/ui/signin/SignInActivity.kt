@@ -1,18 +1,18 @@
 package com.trolle.trolleapp.ui.signin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.trolle.trolleapp.data.SignInBody
 import com.trolle.trolleapp.data.SignInResponse
 import com.trolle.trolleapp.data.network.api.RetrofitClient
+import com.trolle.trolleapp.data.sharedpref.SharedPreference
 import com.trolle.trolleapp.databinding.ActivitySignInBinding
 import com.trolle.trolleapp.ui.home.HomeActivity
 import com.trolle.trolleapp.ui.signup.SignUpActivity
-import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,11 +51,17 @@ class SignInActivity : AppCompatActivity() {
         val signInInfo = SignInBody(username, password)
         retIn.login(signInInfo).enqueue(object : Callback<SignInResponse> {
             override fun onFailure(call: Call<SignInResponse>, t: Throwable) {
-                Toast.makeText(applicationContext, "on Failure", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Timeout", Toast.LENGTH_SHORT).show()
             }
+
             override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
                 if (response.code() == 200) {
                     Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
+
+                    val sharedPreference: SharedPreference = SharedPreference(this@SignInActivity)
+                    sharedPreference.save("id_user", response.body()!!.data.id)
+                    sharedPreference.save("token", response.body()!!.data.token)
+
                     startActivity(Intent(applicationContext, HomeActivity::class.java))
                     finish()
                 } else {
@@ -63,10 +69,9 @@ class SignInActivity : AppCompatActivity() {
                     response.errorBody()?.string()?.let {
                         val jsonObject = JSONObject(it)
                         val msg = jsonObject.getString("message")
-                        val status = jsonObject.getString("status")
                         responseMessage = "$msg"
                     }
-                    val errorMessage = "Error ${response.code()}: $responseMessage"
+                    val errorMessage = "Error: $responseMessage"
                     Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }

@@ -1,6 +1,7 @@
 package com.trolle.trolleapp.data.network.api
 
 import com.trolle.trolleapp.data.*
+import com.trolle.trolleapp.data.sharedpref.SharedPreference
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -21,4 +22,10 @@ interface Api {
     fun registerUser(
             @Body info: User
     ): Call<ResponseBody>
+
+    @POST("raspiSession/requestSession")
+    @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
+    fun connectRaspi(
+            @Body info: UserRaspi
+    ): Call<UserRaspiResponse>
 }
