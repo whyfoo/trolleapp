@@ -26,6 +26,18 @@ interface Api {
     @POST("raspiSession/requestSession")
     @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
     fun connectRaspi(
-            @Body info: UserRaspi
+            @Body info: UserRaspi,
+    ): Call<UserRaspiResponse>
+
+    @GET("orders/getAllOrders/5")
+    @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
+    fun getOrderId(
+
+    )
+
+    @POST("raspiSession/endSession")
+    @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
+    fun disconnectRaspi(
+            @Body info: DisconnectRaspi,
     ): Call<UserRaspiResponse>
 }

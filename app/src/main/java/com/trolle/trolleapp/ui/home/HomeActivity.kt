@@ -15,6 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.trolle.trolleapp.R
+import com.trolle.trolleapp.data.sharedpref.SharedPreference
 import com.trolle.trolleapp.databinding.ActivityHomeBinding
 import com.trolle.trolleapp.ui.side_menu.AboutActivity
 import com.trolle.trolleapp.ui.side_menu.EditProfileActivity
@@ -35,6 +36,8 @@ class HomeActivity : AppCompatActivity() {
             binding.drawerLayout.open()
         }
 
+        val sharedPreference: SharedPreference = SharedPreference(this)
+
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
             when(menuItem.itemId){
@@ -47,7 +50,9 @@ class HomeActivity : AppCompatActivity() {
                 R.id.item_help ->
                     startActivity(Intent(this, HelpActivity::class.java))
                 R.id.item_sign_out -> {
+                    sharedPreference.clearSharedPreference()
                     startActivity(Intent(this, SignInActivity::class.java))
+                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show()
                     finish()
                 }
 

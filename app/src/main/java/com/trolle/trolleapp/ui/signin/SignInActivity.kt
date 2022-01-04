@@ -41,6 +41,10 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
+        binding.textViewForgetPassword.setOnClickListener{
+            startActivity(Intent(applicationContext, HomeActivity::class.java))
+        }
+
         binding.textViewThenSignUp.setOnClickListener{
             startActivity(Intent(this, SignUpActivity::class.java))
         }

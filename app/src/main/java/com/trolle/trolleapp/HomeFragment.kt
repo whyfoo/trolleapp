@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
                 alertDialogStatus.apply {
                     setTitle("Success!")
                     setMessage("Your smartphone has successfully connected with Trolley ID = " + input.toString() +
-                            "     Happy Shopping!")
+                            "\nHappy Shopping!")
                     setPositiveButton("OK") { dialog, which ->
                         Navigation.findNavController(view).navigate(R.id.payFragment)
                     }
