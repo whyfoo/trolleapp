@@ -60,7 +60,7 @@ class SignInActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
                 if (response.code() == 200) {
-                    Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_SHORT).show()
 
                     val sharedPreference: SharedPreference = SharedPreference(this@SignInActivity)
                     sharedPreference.save("id_user", response.body()!!.data.id)

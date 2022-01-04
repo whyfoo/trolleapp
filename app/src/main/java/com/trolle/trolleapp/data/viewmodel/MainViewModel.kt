@@ -1,5 +1,8 @@
 package com.trolle.trolleapp.data.viewmodel
 
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +12,7 @@ import com.trolle.trolleapp.data.CartResponse
 import com.trolle.trolleapp.data.Item
 import com.trolle.trolleapp.data.ItemResponse
 import com.trolle.trolleapp.data.network.api.RetrofitClient
+import com.trolle.trolleapp.ui.signin.SignInActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,20 +23,20 @@ class MainViewModel: ViewModel() {
     val listItems = MutableLiveData<ArrayList<Cart>>()
 
     fun setSearchItems(query: Int){
-        RetrofitClient.apiInstance
-                .getCartItems(query)
-                .enqueue(object: Callback<CartResponse>{
-                    override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
-                        if (response.isSuccessful){
-                            listItems.postValue(response.body()?.data?.result)
-                        }
-                    }
+                RetrofitClient.apiInstance
+                        .getCartItems(query)
+                        .enqueue(object: Callback<CartResponse>{
+                            override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
+                                if (response.isSuccessful){
+                                    listItems.postValue(response.body()?.data?.result)
+                                }
+                            }
 
-                    override fun onFailure(call: Call<CartResponse>, t: Throwable) {
-                        Log.d("Failure", "ada error mainviewmodel")
-                    }
+                            override fun onFailure(call: Call<CartResponse>, t: Throwable) {
+                                Log.d("Failure", "ada error mainviewmodel")
+                            }
 
-                })
+                        })
     }
 
     fun getSearchItems(): LiveData<ArrayList<Cart>>{

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.trolle.trolleapp.data.Item
 import com.trolle.trolleapp.data.adapter.ItemAdapter
+import com.trolle.trolleapp.data.sharedpref.SharedPreference
 import com.trolle.trolleapp.data.viewmodel.MainViewModel
 import com.trolle.trolleapp.databinding.FragmentPayBinding
 import com.trolle.trolleapp.ui.pay.CheckoutActivity
@@ -50,6 +51,7 @@ class PayFragment : Fragment() {
         binding.rvItems.adapter = adapter
 
         searchItem()
+
         Toast.makeText(context, "Searching items", Toast.LENGTH_SHORT).show()
 
         viewModel.getSearchItems().observe(viewLifecycleOwner, {
@@ -79,7 +81,8 @@ class PayFragment : Fragment() {
     }
 
     private fun searchItem(){
-        val query = 11
+        val sharedPreference: SharedPreference = SharedPreference(requireContext())
+        val query = sharedPreference.getValueInt("id_order")
         viewModel.setSearchItems(query)
 
     }

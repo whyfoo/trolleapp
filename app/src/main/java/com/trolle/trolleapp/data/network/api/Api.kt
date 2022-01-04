@@ -29,17 +29,17 @@ interface Api {
             @Body info: UserRaspi,
     ): Call<UserRaspiResponse>
 
-    @GET("orders/getAllOrders/5")
-    @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
-    fun getOrderId(
-
-    ): Call<OrderResponse>
-
     @POST("raspiSession/endSession")
     @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
     fun disconnectRaspi(
             @Body info: DisconnectRaspi,
     ): Call<UserRaspiResponse>
+
+    @GET("orders/getAllOrders/{id_user}")
+    @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")
+    fun getOrderId(
+            @Path("id_user") id_user: Int
+    ): Call<OrderResponse>
 
     @GET("ordersxproducts/getCart/{id_order}")
     @Headers("Authorization: Bearer " + "eyJhbGciOiJIUzI1NiJ9.aGFuaXA.TgV2hhHJFndbvucYSV_qN_fzBY5nGJRBOv7NcX2FdIw")

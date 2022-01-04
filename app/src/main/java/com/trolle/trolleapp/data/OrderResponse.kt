@@ -5,7 +5,7 @@ import java.util.*
 data class OrderResponse (
         val status: String,
         val message: String,
-        val data: OrderData
+        val data: ArrayList<OrderData>
 )
 
 data class OrderData(

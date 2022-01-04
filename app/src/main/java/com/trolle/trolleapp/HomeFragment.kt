@@ -5,6 +5,7 @@ import android.content.*
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.InputType
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +13,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.Navigation
-import com.trolle.trolleapp.data.SignInBody
-import com.trolle.trolleapp.data.SignInResponse
-import com.trolle.trolleapp.data.UserRaspi
-import com.trolle.trolleapp.data.UserRaspiResponse
+import com.trolle.trolleapp.data.*
 import com.trolle.trolleapp.data.network.api.RetrofitClient
 import com.trolle.trolleapp.data.sharedpref.SharedPreference
 import com.trolle.trolleapp.databinding.FragmentHomeBinding
@@ -75,6 +73,7 @@ class HomeFragment : Fragment() {
                             "\nHappy Shopping!")
                     setPositiveButton("OK") { dialog, which ->
                         Navigation.findNavController(view).navigate(R.id.payFragment)
+                        getOrderId(idUser)
                     }
                     alertDialogStatus.setNegativeButton("Cancel") { dialog, which ->
                         dialog.cancel()
@@ -107,6 +106,36 @@ class HomeFragment : Fragment() {
                         val msg = jsonObject.getString("message")
                         responseMessage = "$msg"
                     }
+                    val errorMessage = "Error: $responseMessage"
+                    Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+
+    private fun getOrderId(id_user: Int){
+        val retIn = RetrofitClient.apiInstance
+        retIn.getOrderId(id_user).enqueue(object : Callback<OrderResponse> {
+            override fun onFailure(call: Call<OrderResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), "Timeout", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>) {
+                if (response.code() == 200) {
+
+                    response.body().let {
+                        val idOrder: Int = it!!.data[it!!.data.size-1].id_order
+
+                        val sharedPreference: SharedPreference = SharedPreference(requireContext())
+
+                        sharedPreference.save("id_order", idOrder)
+
+                        Toast.makeText(requireContext(), "Order ID set: " + sharedPreference.getValueInt("id_order"), Toast.LENGTH_LONG).show()
+
+                    }
+
+                } else {
+                    var responseMessage = response.message()
                     val errorMessage = "Error: $responseMessage"
                     Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
                 }
