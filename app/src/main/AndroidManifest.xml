@@ -16,7 +16,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Trolleapp">
+        android:theme="@style/Theme.Trolleapp"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.pay.ShoppingListActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

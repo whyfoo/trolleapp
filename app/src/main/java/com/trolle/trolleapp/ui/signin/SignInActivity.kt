@@ -7,15 +7,16 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import com.trolle.trolleapp.data.SignInBody
+import com.trolle.trolleapp.data.SignInResponse
 import com.trolle.trolleapp.data.network.api.RetrofitClient
 import com.trolle.trolleapp.databinding.ActivitySignInBinding
 import com.trolle.trolleapp.ui.home.HomeActivity
 import com.trolle.trolleapp.ui.signup.SignUpActivity
 import okhttp3.ResponseBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
 
 class SignInActivity : AppCompatActivity() {
 
@@ -37,8 +38,6 @@ class SignInActivity : AppCompatActivity() {
                 binding.textFieldPassword.setError("Password cannot be empty.")
             } else {
                 signin(username, password)
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
             }
         }
 
@@ -50,15 +49,25 @@ class SignInActivity : AppCompatActivity() {
     private fun signin(username: String, password: String){
         val retIn = RetrofitClient.apiInstance
         val signInInfo = SignInBody(username, password)
-        retIn.login(signInInfo).enqueue(object : Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Toast.makeText(applicationContext, t.message, Toast.LENGTH_SHORT).show()
+        retIn.login(signInInfo).enqueue(object : Callback<SignInResponse> {
+            override fun onFailure(call: Call<SignInResponse>, t: Throwable) {
+                Toast.makeText(applicationContext, "on Failure", Toast.LENGTH_SHORT).show()
             }
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            override fun onResponse(call: Call<SignInResponse>, response: Response<SignInResponse>) {
                 if (response.code() == 200) {
-                    Toast.makeText(applicationContext, "Login success!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
+                    startActivity(Intent(applicationContext, HomeActivity::class.java))
+                    finish()
                 } else {
-                    Toast.makeText(applicationContext, "Login failed!", Toast.LENGTH_SHORT).show()
+                    var responseMessage = response.message()
+                    response.errorBody()?.string()?.let {
+                        val jsonObject = JSONObject(it)
+                        val msg = jsonObject.getString("message")
+                        val status = jsonObject.getString("status")
+                        responseMessage = "$msg"
+                    }
+                    val errorMessage = "Error ${response.code()}: $responseMessage"
+                    Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
         })

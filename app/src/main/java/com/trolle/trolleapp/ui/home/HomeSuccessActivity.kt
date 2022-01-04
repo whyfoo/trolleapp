@@ -16,6 +16,11 @@ class HomeSuccessActivity : AppCompatActivity() {
         binding = ActivityHomeSuccessBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val extras = this.intent.extras
+        val totalPrice = extras!!.getInt("totalPrice")
+
+        binding.textViewGrandTotalPrice.text = getString(R.string.sub_total_price_dummy, totalPrice)
+
         binding.buttonBackToHome.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()

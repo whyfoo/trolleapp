@@ -1,8 +1,8 @@
 package com.trolle.trolleapp.ui.pay
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.trolle.trolleapp.R
 import com.trolle.trolleapp.databinding.ActivityCheckoutBinding
 import com.trolle.trolleapp.ui.home.HomeSuccessActivity
@@ -16,8 +16,18 @@ class CheckoutActivity : AppCompatActivity() {
         binding = ActivityCheckoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val extras = this.intent.extras
+        val price = extras!!.getInt("price")
+        val total = price+6500
+
+        binding.textViewSubTotalPrice.text = getString(R.string.sub_total_price_dummy, price)
+        binding.textViewGrandTotalPrice.text = getString(R.string.sub_total_price_dummy, total)
+
         binding.buttonPay.setOnClickListener {
-            startActivity(Intent(this, HomeSuccessActivity::class.java))
+            val intent = Intent(this, HomeSuccessActivity::class.java)
+            intent.putExtra("totalPrice", total)
+            startActivity(intent)
+//            startActivity(Intent(this, HomeSuccessActivity::class.java))
             finish()
         }
     }

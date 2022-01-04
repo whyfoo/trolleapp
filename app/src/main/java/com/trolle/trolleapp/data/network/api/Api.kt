@@ -1,8 +1,6 @@
 package com.trolle.trolleapp.data.network.api
 
-import com.trolle.trolleapp.data.ItemResponse
-import com.trolle.trolleapp.data.SignInBody
-import com.trolle.trolleapp.data.User
+import com.trolle.trolleapp.data.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -16,7 +14,7 @@ interface Api {
 
     @POST("users/login")
     @Headers("Content-Type:application/json")
-    fun login(@Body info: SignInBody): Call<ResponseBody>
+    fun login(@Body info: SignInBody): Call<SignInResponse>
 
     @POST("users")
     @Headers("Content-Type:application/json")
