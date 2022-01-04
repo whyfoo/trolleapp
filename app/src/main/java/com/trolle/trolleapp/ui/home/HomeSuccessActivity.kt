@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.ViewModelProvider
 import com.trolle.trolleapp.R
 import com.trolle.trolleapp.data.DisconnectRaspi
 import com.trolle.trolleapp.data.UserRaspi
 import com.trolle.trolleapp.data.UserRaspiResponse
 import com.trolle.trolleapp.data.network.api.RetrofitClient
 import com.trolle.trolleapp.data.sharedpref.SharedPreference
+import com.trolle.trolleapp.data.viewmodel.MainViewModel
 import com.trolle.trolleapp.databinding.ActivityHomeSuccessBinding
 import com.trolle.trolleapp.ui.pay.CheckoutActivity
 import org.json.JSONObject
@@ -37,6 +39,8 @@ class HomeSuccessActivity : AppCompatActivity() {
 
         binding.buttonBackToHome.setOnClickListener {
             disconnectRaspi(idUser)
+            sharedPreference.save("status", false)
+            sharedPreference.removeValue("id_order")
             finish()
         }
     }

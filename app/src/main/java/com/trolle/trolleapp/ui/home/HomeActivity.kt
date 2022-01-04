@@ -50,10 +50,15 @@ class HomeActivity : AppCompatActivity() {
                 R.id.item_help ->
                     startActivity(Intent(this, HelpActivity::class.java))
                 R.id.item_sign_out -> {
-                    sharedPreference.clearSharedPreference()
-                    startActivity(Intent(this, SignInActivity::class.java))
-                    Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show()
-                    finish()
+                    if (sharedPreference.getValueBoolien("status", false).equals(false)){
+                        sharedPreference.clearSharedPreference()
+                        startActivity(Intent(this, SignInActivity::class.java))
+                        Toast.makeText(this, "Logged Out Successfully", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Please checkout your order first!", Toast.LENGTH_LONG).show()
+                    }
+
                 }
 
             }

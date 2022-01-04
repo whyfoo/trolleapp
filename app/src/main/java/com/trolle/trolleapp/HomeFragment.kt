@@ -12,10 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.trolle.trolleapp.data.*
 import com.trolle.trolleapp.data.network.api.RetrofitClient
 import com.trolle.trolleapp.data.sharedpref.SharedPreference
+import com.trolle.trolleapp.data.viewmodel.MainViewModel
 import com.trolle.trolleapp.databinding.FragmentHomeBinding
 import com.trolle.trolleapp.ui.home.HomeActivity
 import org.json.JSONObject
@@ -46,6 +48,10 @@ class HomeFragment : Fragment() {
         val sharedPreference: SharedPreference = SharedPreference(requireContext())
         val idUser = sharedPreference.getValueInt("id_user")
 
+        if (sharedPreference.getValueBoolien("status", false)){
+            Navigation.findNavController(view).navigate(R.id.payFragment)
+        }
+
         binding.imageViewBarcode.setOnClickListener{
             val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePhotoIntent, 1)
@@ -72,8 +78,9 @@ class HomeFragment : Fragment() {
                     setMessage("Your smartphone has successfully connected with Trolley ID = " + input.toString() +
                             "\nHappy Shopping!")
                     setPositiveButton("OK") { dialog, which ->
-                        Navigation.findNavController(view).navigate(R.id.payFragment)
                         getOrderId(idUser)
+                        sharedPreference.save("status", true)
+                        Navigation.findNavController(view).navigate(R.id.payFragment)
                     }
                     alertDialogStatus.setNegativeButton("Cancel") { dialog, which ->
                         dialog.cancel()

@@ -41,6 +41,7 @@ class PayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var subTotal: Int = 0
+        binding.textViewSubTotalPrice.text = subTotal.toString()
 
         adapter = ItemAdapter()
         adapter.notifyDataSetChanged()
@@ -52,7 +53,7 @@ class PayFragment : Fragment() {
 
         searchItem()
 
-        Toast.makeText(context, "Searching items", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Shopping process started", Toast.LENGTH_SHORT).show()
 
         viewModel.getSearchItems().observe(viewLifecycleOwner, {
             if (it != null) {
@@ -81,9 +82,7 @@ class PayFragment : Fragment() {
     }
 
     private fun searchItem(){
-        val sharedPreference: SharedPreference = SharedPreference(requireContext())
-        val query = sharedPreference.getValueInt("id_order")
-        viewModel.setSearchItems(query)
+        viewModel.setSearchItems(requireContext())
 
     }
 

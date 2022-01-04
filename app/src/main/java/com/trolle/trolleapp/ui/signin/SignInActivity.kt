@@ -28,6 +28,12 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPreference: SharedPreference = SharedPreference(this@SignInActivity)
+        if (!sharedPreference.getValueInt("id_user").equals(0)){
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+
         binding.buttonSignIn.setOnClickListener {
             val username: String = binding.editTextUsername.getText().toString()
             val password: String = binding.editTextPassword.getText().toString()
