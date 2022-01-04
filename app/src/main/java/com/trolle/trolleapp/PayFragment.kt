@@ -33,10 +33,6 @@ class PayFragment : Fragment() {
     private var _binding: FragmentPayBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,8 +59,14 @@ class PayFragment : Fragment() {
         viewModel.getSearchItems().observe(viewLifecycleOwner, {
             if (it!=null){
                 showLoading(true)
+                var totalPrice = -100000000
+                for (i in 0..it.size-1){
+                    totalPrice += it.get(i).id
+                }
                 adapter.setList(it)
                 showLoading(false)
+                totalPrice /= 10000
+                binding.textViewSubTotalPrice.text = getString(R.string.sub_total_price_dummy, totalPrice)
             }
         })
 

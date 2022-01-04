@@ -2,10 +2,10 @@ package com.trolle.trolleapp.data.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.trolle.trolleapp.data.Item
 import com.trolle.trolleapp.databinding.ItemRowListBinding
+import java.text.NumberFormat
 import java.util.*
 
 class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
@@ -19,10 +19,14 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ItemRowListBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: Item){
+            val price = item.id/100
             binding.tvItemName.text = item.login
-            binding.tvItemCount.text = item.type
-            binding.tvItemPrice.text = item.id.toString()
+            binding.tvItemCount.text = "x${price%10+1}"
 
+            val localeID = Locale("in", "ID")
+            val rupiah = NumberFormat.getCurrencyInstance(localeID)
+
+            binding.tvItemPrice.text = rupiah.format(price)
         }
 
     }
