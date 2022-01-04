@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.trolle.trolleapp.data.Cart
+import com.trolle.trolleapp.data.CartResponse
 import com.trolle.trolleapp.data.Item
 import com.trolle.trolleapp.data.ItemResponse
 import com.trolle.trolleapp.data.network.api.RetrofitClient
@@ -14,26 +16,26 @@ import java.util.*
 
 class MainViewModel: ViewModel() {
 
-    val listItems = MutableLiveData<ArrayList<Item>>()
+    val listItems = MutableLiveData<ArrayList<Cart>>()
 
-    fun setSearchItems(query: String){
+    fun setSearchItems(query: Int){
         RetrofitClient.apiInstance
-                .getSearchItems(query)
-                .enqueue(object: Callback<ItemResponse>{
-                    override fun onResponse(call: Call<ItemResponse>, response: Response<ItemResponse>) {
+                .getCartItems(query)
+                .enqueue(object: Callback<CartResponse>{
+                    override fun onResponse(call: Call<CartResponse>, response: Response<CartResponse>) {
                         if (response.isSuccessful){
-                            listItems.postValue(response.body()?.items)
+                            listItems.postValue(response.body()?.data?.result)
                         }
                     }
 
-                    override fun onFailure(call: Call<ItemResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<CartResponse>, t: Throwable) {
                         Log.d("Failure", "ada error mainviewmodel")
                     }
 
                 })
     }
 
-    fun getSearchItems(): LiveData<ArrayList<Item>>{
+    fun getSearchItems(): LiveData<ArrayList<Cart>>{
         return listItems
     }
 }

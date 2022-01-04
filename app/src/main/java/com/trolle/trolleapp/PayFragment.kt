@@ -55,13 +55,12 @@ class PayFragment : Fragment() {
         viewModel.getSearchItems().observe(viewLifecycleOwner, {
             if (it != null) {
                 showLoading(true)
-                var totalPrice = -100000000
+                var totalPrice = 0
                 for (i in 0..it.size - 1) {
-                    totalPrice += it.get(i).id
+                    totalPrice += it.get(i).price_per_unit * it.get(i).quantity
                 }
                 adapter.setList(it)
                 showLoading(false)
-                totalPrice /= 10000
                 binding.textViewSubTotalPrice.text = getString(R.string.sub_total_price_dummy, totalPrice)
 
                 subTotal = totalPrice
@@ -80,7 +79,7 @@ class PayFragment : Fragment() {
     }
 
     private fun searchItem(){
-        val query = "wondrouss"
+        val query = 11
         viewModel.setSearchItems(query)
 
     }
